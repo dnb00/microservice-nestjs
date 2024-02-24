@@ -9,7 +9,16 @@ Content-Type: application/json
   "startDate": "12/20/2022",
   "endDate": "12/25/2022",
    "placeId": "2131",
-   "invoiceId": "23"
+   "invoiceId": "23",
+   "charge": {
+    "amount": 10,
+    "card":{
+      "cvc": "413",
+      "exp_month": 12,
+      "exp_year": 2027,
+      "number": "4242 4242 4242 4242"
+    }
+   }
 }
 ###
 GET  http://localhost:3000/reservations/65d96377f18cf948d203fe4e
