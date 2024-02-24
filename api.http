@@ -8,11 +8,15 @@ Content-Type: application/json
 {
   "startDate": "12/20/2022",
   "endDate": "12/25/2022",
-   "placeId": "54323",
-   "invoiceId": "423"
+   "placeId": "2131",
+   "invoiceId": "23"
 }
 ###
 GET  http://localhost:3000/reservations/65d96377f18cf948d203fe4e
+Content-Type: application/json
+
+###
+GET  http://localhost:3001/users
 Content-Type: application/json
 
 ###
@@ -21,7 +25,7 @@ Content-Type: application/json
 
 {
   "email": "teste3@teste.com",
-  "password": "ramdonstrongpassword123"
+  "password": "ramDonstrongpassword123!"
 }
 
 ###
