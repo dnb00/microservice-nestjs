@@ -20,6 +20,15 @@ POST  http://localhost:3001/users
 Content-Type: application/json
 
 {
-  "email": "teste@teste.com",
+  "email": "teste3@teste.com",
+  "password": "ramdonstrongpassword123"
+}
+
+###
+POST  http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+  "email": "teste3@teste.com",
   "password": "ramdonstrongpassword123"
 }
