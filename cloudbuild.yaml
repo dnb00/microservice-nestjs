@@ -1,0 +1,57 @@
+steps:
+  # Reservations
+  - name: 'gcr.io/cloud-builders/docker'
+    args: 
+      [
+        'build',
+        '-t',
+        'southamerica-east1-docker.pkg.dev/microservice-415318/reservations/production',
+        '-f',
+        'apps/reservations/Dockerfile',
+        '.',
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      ['push', 'southamerica-east1-docker.pkg.dev/microservice-415318/reservations/production']
+  # Auth
+  - name: 'gcr.io/cloud-builders/docker'
+    args: 
+      [
+        'build',
+        '-t',
+        'southamerica-east1-docker.pkg.dev/microservice-415318/auth/production',
+        '-f',
+        'apps/reservations/Dockerfile',
+        '.',
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      ['push', 'southamerica-east1-docker.pkg.dev/microservice-415318/auth/production']
+  # Payments
+  - name: 'gcr.io/cloud-builders/docker'
+    args: 
+      [
+        'build',
+        '-t',
+        'southamerica-east1-docker.pkg.dev/microservice-415318/payments/production',
+        '-f',
+        'apps/payments/Dockerfile',
+        '.',
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      ['push', 'southamerica-east1-docker.pkg.dev/microservice-415318/payments/production']
+  # Notifications
+  - name: 'gcr.io/cloud-builders/docker'
+    args: 
+      [
+        'build',
+        '-t',
+        'southamerica-east1-docker.pkg.dev/microservice-415318/notifications/production',
+        '-f',
+        'apps/notifications/Dockerfile',
+        '.',
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      ['push', 'southamerica-east1-docker.pkg.dev/microservice-415318/notifications/production']
