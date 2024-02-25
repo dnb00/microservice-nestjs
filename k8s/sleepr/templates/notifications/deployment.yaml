@@ -20,3 +20,22 @@ spec:
         - image: southamerica-east1-docker.pkg.dev/microservice-415318/notification/production
           name: notification
           imagePullPolicy: Always
+          env:
+            - name: PORT
+              value: '3000'
+            - name: GOOGLE_OAUTH_CLIENT_ID
+              value: 829659381284-ul5jp0krugpn58jondn3ci4ighi96uto.apps.googleusercontent.com
+            - name: SMTP_USER
+              value: perguntacertaquiz@gmail.com
+            - name: GOOGLE_OAUTH_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: google
+                  key: clientSecret
+            - name: GOOGLE_OAUTH_REFRESH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: google
+                  key: refreshToken
+          ports:
+            - containerPort: 3000

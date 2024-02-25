@@ -18,3 +18,9 @@ spec:
         - image: southamerica-east1-docker.pkg.dev/microservice-415318/reservations/production
           name: reservations
           imagePullPolicy: Always
+          env:
+          - name: MONGODB_URI
+            valueFrom:
+              secretKeyRef:
+                name: mongodb
+                key: connectionString
