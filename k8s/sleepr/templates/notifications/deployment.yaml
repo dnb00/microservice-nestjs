@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: notifications
+  name: notifications
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notifications
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: notifications
+    spec:
+      containers:
+        - image: southamerica-east1-docker.pkg.dev/microservice-415318/notification/production
+          name: notification
+          imagePullPolicy: Always
