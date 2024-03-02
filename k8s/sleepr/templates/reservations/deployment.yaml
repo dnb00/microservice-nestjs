@@ -15,7 +15,7 @@ spec:
         app: reservations
     spec:
       containers:
-        - image: southamerica-east1-docker.pkg.dev/microservice-415318/reservations/production
+        - image: 590183872093.dkr.ecr.sa-east-1.amazonaws.com/reservations:latest
           name: reservations
           imagePullPolicy: Always
           env:

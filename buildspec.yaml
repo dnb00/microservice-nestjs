@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - aws ecr get-login-password --region sa-east-1 | docker login --username AWS --password-stdin 590183872093.dkr.ecr.sa-east-1.amazonaws.com
+      - aws ecr get-login-password --region sa-east-1 | docker login --username AWS --password-stdin ${PASSWORD}
   build:
     commands:
       - docker build -t reservations -f ./apps/reservations/Dockerfile .
