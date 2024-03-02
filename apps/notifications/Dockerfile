@@ -3,7 +3,7 @@ FROM node:18.19.1-alpine AS development
 WORKDIR /usr/src/app
 
 COPY package.json ./
-COPY package-lock.json ./
+COPY pnpm-lock.yaml ./
 COPY tsconfig.json tsconfig.json
 COPY nest-cli.json nest-cli.json
 
@@ -24,7 +24,7 @@ ENV NODE_ENV=${NODE_ENV}
 WORKDIR /usr/src/app
 
 COPY package.json ./
-COPY package-lock.json ./
+COPY pnpm-lock.yaml ./
 
 RUN npm install -g pnpm
 
